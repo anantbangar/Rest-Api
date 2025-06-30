@@ -40,7 +40,8 @@ public class EmployeeController
 	@GetMapping("/emp/{id}")
 	public Employee getEmp(@PathVariable String id)
 	{
-		return employeeDao.getReferenceById(Integer.parseInt(id));
+		//return employeeDao.getReferenceById(Integer.parseInt(id));
+		return employeeDao.findById(Integer.parseInt(id)).orElse(null);
 	}
 	
 	@DeleteMapping("/emp/{id}")
